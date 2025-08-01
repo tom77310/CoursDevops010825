@@ -5,12 +5,6 @@ pipeline {
         }
     }
 
-    environment {
-        dockerhub_credential_id = 'credential_dockerhub_didierdefrance69'
-        docker_registry = 'https://registry.hub.docker.com'
-        docker_image_name = 'didierdefrance69/simple-js-project:1'
-    }
-
     stages {
         stage('Cloner depuis GitHub') {
             steps {
@@ -36,19 +30,7 @@ pipeline {
             steps {
                 script {
                     echo "docker_image_name = ${docker_image_name}"
-                    dockerImage = docker.build(docker_image_name)
-                }
-            }
-        }
-
-        stage('Push de l\'image Docker') {
-            steps {
-                script {
-                    echo "docker_registry = ${docker_registry}"
-                    echo "dockerhub_credential_id = ${dockerhub_credential_id}"
-                    docker.withRegistry(docker_registry, dockerhub_credential_id) {
-                        dockerImage.push()
-                    }
+                    def dockerImage = docker.build(docker_image_name) // ✅ déclaration avec 'def'
                 }
             }
         }
