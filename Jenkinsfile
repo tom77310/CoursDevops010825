@@ -12,7 +12,7 @@ pipeline {
 		//dockerRegistry is dockerhub
 		docker_registry= 'https://registry.hub.docker.com'
 		
-		docker_image_name='tom77310/ProjetSimpleNodeJS:1'
+		docker_image_name='tom77310/projet_nodejs_simple:1'
 	}
     stages {
         stage('Cloner depuis GitHub') {
