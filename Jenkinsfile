@@ -5,9 +5,9 @@ pipeline {
         }
     }
     environment{
-	    //NB: credential_dockerhub_didierdefrance69 is ID of credential
+	    //NB: credential_dockerhub_tom77310 is ID of credential
 		//prepared in "Admin Jenkins / Credentials / system /global"
-		dockerhub_credential_id='credential_dockerhub_didierdefrance69'
+		dockerhub_credential_id='credential_dockerhub_tom77310'
 		
 		//dockerRegistry is dockerhub
 		docker_registry= 'https://registry.hub.docker.com'
