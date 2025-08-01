@@ -25,14 +25,5 @@ pipeline {
                 sh 'npm test'
             }
         }
-
-        stage('Build de l\'image Docker') {
-            steps {
-                script {
-                    echo "docker_image_name = ${docker_image_name}"
-                    def dockerImage = docker.build(docker_image_name) // ✅ déclaration avec 'def'
-                }
-            }
-        }
     }
 }
